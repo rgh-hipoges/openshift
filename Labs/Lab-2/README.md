@@ -72,22 +72,22 @@ Requisitos:
   2.2. Actualizar el deployment de la aplicacion para añadir las variables definidas en el configmap:
 
     $ oc edit dc printenv
-
-      spec:
-        containers:
-        - env:
-          - name: APP_VAR_1
-            value: Value1
-          - name: APP_VAR_3
-            valueFrom:
-              configMapKeyRef:
-                name: printenv-config
-                key: APP_VAR_3
-          - name: APP_VAR_4
-            valueFrom:
-              configMapKeyRef:
-                name: printenv-config
-                key: APP_VAR_4
+    
+    spec:
+      containers:
+      - env:
+        - name: APP_VAR_1
+          value: Value1
+        - name: APP_VAR_3
+          valueFrom:
+            configMapKeyRef:
+              key: APP_VAR_3
+              name: printenv-config
+        - name: APP_VAR_4
+          valueFrom:
+            configMapKeyRef:
+              key: APP_VAR_4
+              name: printenv-config
 
   2.3. Para salir del edit hay que guardar la configuracion ":wq!"
 
@@ -99,7 +99,7 @@ Requisitos:
 
   2.6. Comprobar nuevamenete las variables de entorno definidas dentro del pod:
 
-    $ oc exec <printenv-X-XXX> printenv |grep APP
+    $ oc exec <printenv-X-XXX> -- printenv |grep APP
     APP_VAR_4=Value4
     APP_VAR_1=Value1
     APP_VAR_3=Value3
