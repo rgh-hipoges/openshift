@@ -31,7 +31,7 @@ Requisitos:
 
   1.5. Comprobar que variables de entorno estan definidas en el pod en ese momento:
 
-    $ oc exec <printenv-X-XXX> printenv |grep APP
+    $ oc exec <printenv-X-XXX> -- printenv |grep APP
 
   1.6. Configurar dos variables de entorno a la aplicacion:
 
@@ -45,7 +45,7 @@ Requisitos:
 
   1.9. Comprobar nuevamenete las variables de entorno definidas dentro del pod:
 
-    $ oc exec <printenv-X-XXX> printenv |grep APP
+    $ oc exec <printenv-X-XXX> -- printenv |grep APP
     APP_VAR_1=Value1
     APP_VAR_2=Value2
     APP_ROOT=/opt/app-root
@@ -56,7 +56,7 @@ Requisitos:
 
   1.9. Comprobar que la variable ya no esta definida:
 
-    $ oc exec <printenv-X-XXX> printenv |grep APP
+    $ oc exec <printenv-X-XXX> -- printenv |grep APP
     APP_VAR_1=Value1
     APP_ROOT=/opt/app-root
 
