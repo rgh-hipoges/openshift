@@ -91,7 +91,10 @@ Salvar y recargar.
             - type: Resource
               resource:
                 name: cpu
-                targetAverageUtilization: 1       
+                target:
+                  type: Utilization
+                  averageUtilization: 1     
+           
 
       Otra forma de crear el `hpa` es por linea de comandos, por ejemplo:
 
