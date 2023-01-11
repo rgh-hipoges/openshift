@@ -58,16 +58,18 @@
 
 Cambiar:
 
-    resources: {}
+          resources:
+            limits:
+              memory: 1Gi
 Por:
 
-    resources:
-      limits:
-        cpu: 30m
-        memory: 100Mi
-      requests:
-        cpu: 3m
-        memory: 40Mi
+          resources:
+            limits:
+              memory: 100Mi
+              cpu: 30m
+            requests:
+              memory: 40Mi
+              cpu: 3m
 
 Salvar y recargar.
 
