@@ -247,7 +247,7 @@ Requisitos:
   4.4. Crear un nuevo proyecto y añadir privilegios de anyuid a la service account **default**:
 
       $ oc new-project $GUID-persistent
-      $ oc adm policy add-scc-to-user anyuid system:serviceaccount:$GUID-env:default
+      $ oc adm policy add-scc-to-user anyuid system:serviceaccount:$GUID-persistent:default
 
   4.5. Crear el PVC (Cambiar el GUID y poner vuestro nombre de proyecto):
 
