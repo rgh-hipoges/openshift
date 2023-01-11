@@ -32,12 +32,6 @@
 
 6. Click en `Create Aplication` y rellenar el formulario que aparece:
 
-Git Repo URL: https://github.com/IBM/node-s2i-openshift.
-
-Desplegar las opciones avanzadas y configurar `/site` para el `Context Dir`.
-
-Poner a la aplicación el nombre que se desee en `Aplication Name`:
-
 ![alt nodejs-context][nodejs-context]
 
 [nodejs-context]: ../imagenes/nodejs-context.png
