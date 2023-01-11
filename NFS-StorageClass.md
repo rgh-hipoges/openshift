@@ -13,14 +13,15 @@ Este procedimiento es para crear una `StorageClass` usando un `NFS-provisioner`.
         systemctl start nfs-server
 
         firewall-cmd --permanent --zone=public --add-service=nfs
-        firewall-cmd --permanent --zone=public --add-service=rpcbind
+        firewall-cmd --permanent --zone=public --add-service=rpc-bind
+        firewall-cmd --permanent --zone=public --add-service=mountd
         firewall-cmd --reload
 
 2. Crear el FS que vamos a exportar y darle los permisos necesarios:
 
         $ mkdir /home/nfs-openshift
-        $ chmod -R 777 /home/nfs-openshift
-        $ chown -R nfsnobody:nfsnobody /home/nfs-openshift
+        $ chmod -R 777 /opt/nfs-openshift
+        $ chown -R nfsnobody:nfsnobody /opt/nfs-openshift
 
 3. Editar el fichero `/etc/exportfs` y añadir la siguiente linea para nuestro FS a exportar:
 
