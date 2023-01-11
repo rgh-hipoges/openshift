@@ -9,7 +9,7 @@ https://access.redhat.com/solutions/4799921
 
 1. Exportar variable con el api-int del cluster:
 
-        $ export MCS=api-int.openshift42.logicalis.com:22623
+        $ export MCS=api.clsk8sdev01.hipoges.com:22623
 
 2. A continuación ejecutar el siguiente comando para obtener el nuevo certificado:
 
